@@ -37,25 +37,35 @@ v0.2
 */
 
 
-var jxNotify = {};
+var jxNotify = {
+    
+    width: '65%',
+    margin: '0 17.5% 0 17.5%',
+    left: '0',
+    markup: `<div id="{{ id }}" style="display:none; font-size:12px; position:fixed; bottom:13px; left:{{ position.left }}px; width:{{ size.width }}px; margin:{{ margins }}; padding:0; height:24px; background-color:#000; border-radius:10px;">
+                <p style="margin:0; padding:0; line-height:24px; color:#fff; font-weight:bold; text-align:center;">
+                    <img style="vertical-align:middle;" src="{{ iconUrl }}" alt="notify icon" />
+                </p>
+             </div>
+            `,
 
-jxNotify.width = '65%';
-jxNotify.margin = '0 17.5% 0 17.5%';
-jxNotify.left = '0';
+    create: function(_containerElement, _notificationData) {
+        $(_containerElement).append(this.markup);
+    },
 
-jxNotify.clear = function ()
-{
-    $('#__jx_notify_overlay').fadeOut('slow');
-}
+    clear: function() {
+        $('#__jx_notify_overlay').fadeOut('slow');
+    }
 
-jxNotify.notifyPostError = function (msg)
-{
-    $('#__jx_notify_overlay').fadeOut('slow', function ()
-    {
+};
+
+
+
+jxNotify.notifyPostError = function (msg) {
+    $('#__jx_notify_overlay').fadeOut('slow', function () {
         $('#__jx_notify_overlay').css('background-color', '#780000');
         $('#__jx_notify_overlay #__jx_notify_overlay_txt').html(msg);
-        $('#__jx_notify_overlay').hide().fadeTo('fast', 1.0, function ()
-        {
+        $('#__jx_notify_overlay').hide().fadeTo('fast', 1.0, function () {
 
         });
     });
@@ -80,20 +90,4 @@ jxNotify.notifyPre = function (msg)
     $('#__jx_notify_overlay').css('background-color', '#000');
     $('#__jx_notify_overlay #__jx_notify_overlay_txt').html(msg);
     $('#__jx_notify_overlay').fadeIn(0, 0.5);
-}
-
-jxNotify.init = function (_icon)
-{
-    var html = '';
-    html += '<div id="__jx_notify_overlay" style="display:none; font-size:12px; position:fixed; bottom:13px; left:' + jxNotify.left + '; width:' + jxNotify.width + '; margin:' + jxNotify.margin + '; padding:0; height:24px; background-color:#000; border-radius:10px; -webkit-border-radius:10px; -moz-border-radius:10px;">';
-    html += '<p style="margin:0; padding:0; line-height:24px; color:#fff; font-weight:bold; text-align:center;">';
-
-    if (_icon) {
-        html += '<img style="vertical-align:middle;" id="__jx_notify_overlay_icon" src="' + _icon + '" alt="notify icon" />';
-    }
-
-    html += '<span style="vertical-align:middle; margin-left:5px;" id="__jx_notify_overlay_txt">...</span></p>';
-    html += '</div>';
-
-    $('body').append(html);
 }
