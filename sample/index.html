@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jx-notify Test</title>
+    <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="../lib/jxNotify.js"></script>
+
+    <style type="text/css">
+    
+        * { font-family:Lato; }
+        a { color:#fff; }
+        
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var jxn = Object.create(jxNotify);
+            jxn.init( document.getElementsByTagName('body')[0] );
+
+            jxn.notify({ "x":{"msg":"sdf"}, "message": "testing 1 2 3", "iconURL": "dotspott-logo.svg" });
+
+            /*jxNotify.init('jx-notify.content/sdotspott-notify-icon.png');
+            jxNotify.notifyPre('Pre Notify');
+
+            setTimeout(function () { jxNotify.notifyPostError('Failed send request. <a href="#" onclick="window.reload(); return false;">Try again</a>'); }, 3000);*/
+        }
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
