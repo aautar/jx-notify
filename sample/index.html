@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>jx-notify Test</title>
-    <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
     <script type="text/javascript" src="../lib/jxNotify.js"></script>
 
     <style type="text/css">
@@ -19,7 +18,8 @@
             var jxn = Object.create(jxNotify);
             jxn.init( document.getElementsByTagName('body')[0] );
 
-            jxn.notify({ "x":{"msg":"sdf"}, "message": "testing 1 2 3", "iconURL": "dotspott-logo.svg" });
+            jxn.notify({ "x":{"msg":"sdf"}, "message": "testing 1 2 3", "iconURL": "dotspott-logo.svg" }, 3000);
+
 
             /*jxNotify.init('jx-notify.content/sdotspott-notify-icon.png');
             jxNotify.notifyPre('Pre Notify');
