@@ -18,8 +18,18 @@
             var jxn = Object.create(jxNotify);
             jxn.init( document.getElementsByTagName('body')[0] );
 
-            jxn.notify({ "x":{"msg":"sdf"}, "message": "testing 1 2 3", "iconURL": "dotspott-logo.svg" }, 3000);
+            jxn.notify({ 
+                            "message": "testing 1 2 3", 
+                            "iconURL": "dotspott-logo.svg" 
+                            
+                        }, 3000);
 
+
+            jxn.notify({ 
+                            "message": "testing 1 2 4", 
+                            "iconURL": "dotspott-logo.svg" 
+                            
+                        }, 3000);
 
             /*jxNotify.init('jx-notify.content/sdotspott-notify-icon.png');
             jxNotify.notifyPre('Pre Notify');
