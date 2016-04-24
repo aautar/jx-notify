@@ -6,7 +6,7 @@
 
     <style type="text/css">
     
-        * { font-family:Lato; }
+        * { font-family:Arial; }
         a { color:#fff; }
         
     </style>
@@ -15,27 +15,34 @@
 
         window.onload = function () {
 
+            var bodyElem = document.getElementsByTagName('body')[0];
+
+            /**
+             * Create an instance of jxNotify
+             */
             var jxn = Object.create(jxNotify);
+            
+            /**
+             * Initialize with document body element as the container for notifications
+             */
+            jxn.init( bodyElem ); 
 
-            jxn.init( document.getElementsByTagName('body')[0] );
+            /**
+             * Example of simple notification
+             * Simply shows message, caller is responsible for hiding it, changing it, etc.
+             */
+            jxn.notify({"message": "testing 1 2 3"});
+            
 
+            /**
+             * Example of notification with icon, background color, and timeout
+             */
             jxn.notify({ 
-                            "message": "testing 1 2 3", 
-                            "iconURL": "dotspott-logo.svg" 
-                            
-                        }, 3000);
+                            "message": "Failed to connect to server!", 
+                            "iconURL": "dotspott-logo.svg", 
+                            "backgroundColor": "error"
+                        }, 5000);
 
-
-            jxn.notify({ 
-                            "message": "testing 1 2 4", 
-                            "iconURL": "dotspott-logo.svg" 
-                            
-                        }, 3000);
-
-            /*jxNotify.init('jx-notify.content/sdotspott-notify-icon.png');
-            jxNotify.notifyPre('Pre Notify');
-
-            setTimeout(function () { jxNotify.notifyPostError('Failed send request. <a href="#" onclick="window.reload(); return false;">Try again</a>'); }, 3000);*/
         }
 
     </script>
