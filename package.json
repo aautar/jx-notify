@@ -6,5 +6,7 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {},
-  "license": "MIT"
+  "license": "MIT",
+  "main": "lib/jxNotify.js",
+  "repository": "https://github.com/aautar/jxNotify.git"
 }
