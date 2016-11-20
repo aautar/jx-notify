@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>jx-notify Test</title>
     <script type="text/javascript" src="../lib/jxNotify.js"></script>
+    <script type="text/javascript" src="../lib/jxNotifyPresenter.js"></script>
 
     <style type="text/css">
     
@@ -31,19 +32,24 @@
              * Example of simple notification
              * Simply shows message, caller is responsible for hiding it, changing it, etc.
              */
-            jxn.notify({"message": "testing 1 2 3"});
+            jxn.notify({id:"msg1", message: "testing 1 2 3"});
             
 
             /**
              * Example of notification with icon, background color, and timeout
              */
-            jxn.notify({ 
-                            "message": "Failed to connect to server!", 
-                            "iconURL": "dotspott-logo.svg", 
-                            "backgroundColor": "error"
-                        }, 5000);
+            setTimeout(function() {
 
-        }
+                jxn.notify({
+                                id:"fail_connect",
+                                message: "Failed to connect to server!",
+                                iconURL: "dotspott-logo.svg",
+                                backgroundColor: "error",
+                                timeout: 2000
+                            });
+            }, 3000);
+
+        };
 
     </script>
 
