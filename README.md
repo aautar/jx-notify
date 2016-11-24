@@ -2,6 +2,8 @@
 
 Simple JS notification component
 
+![jxNotify](http://semisignal.com/uploaded_images/jx-notify.gif)
+
 ##Usage
 
 ```js
