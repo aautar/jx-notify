@@ -1,10 +1,10 @@
-#jxNotify
+# jxNotify
 
 Simple JS notification component
 
 ![jxNotify](http://semisignal.com/uploaded_images/jx-notify-preview.gif)
 
-##Usage
+## Usage
 
 ```js
 // Create notifier object and initialize with container DOM element
